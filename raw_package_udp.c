@@ -1,23 +1,16 @@
-#include <stdio.h> //for printf
-#include <string.h> //memset
-#include <sys/socket.h>    //for socket ofcourse
+#include <stdio.h> 
+#include <string.h> 
+#include <sys/socket.h>
 #include <sys/types.h>
-#include <stdlib.h> //for exit(0);
-#include <errno.h> //For errno - the error number
-// #include <netinet/udp.h>   //Provides declarations for udp header
-#include <netinet/ip.h>    //Provides declarations for ip header
+#include <stdlib.h> 
+#include <errno.h> 
+// #include <netinet/udp.h>
+#include <netinet/ip.h>    
 #include <netinet/in_systm.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <netinet/in.h>
 #include <net/if.h>
-#include <iostream>
-/* 
-    96 bit (12 bytes) pseudo header needed for udp header checksum calculation 
-*/
-
-using namespace std;
-
 
 struct pseudo_header
 {
@@ -48,9 +41,6 @@ struct udphdr
 };
 #endif
 
-/*
-    Generic checksum calculation function
-*/
 unsigned short csum(unsigned short * ptr, int nbytes) 
 {
     register long sum;
