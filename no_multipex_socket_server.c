@@ -24,7 +24,7 @@ struct buffer {
 };
 
 void printd(char * buffer, int n) {
-  printf(buffer, n, strlen(buffer));
+  printf(buffer, n);
   fflush(stdout);
 }
 
